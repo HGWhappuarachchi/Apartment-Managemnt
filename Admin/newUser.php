@@ -68,23 +68,23 @@ if(isset($_POST['submit'])){
         <form method="post" action="">
             <div class="form-group">
                 <label for="exampleInputUsername1">Username</label>
-                <input type="text" class="form-control" id="exampleInputUsername1" name="username" placeholder="Enter username">
+                <input type="text" class="form-control" id="exampleInputUsername1" name="username" placeholder="Enter username" style="border-color: #ced4da;">
                 <div id="usernameError" class="text-danger"></div>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" style="border-color: #ced4da;">
                 <div id="emailError" class="text-danger"></div>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" style="border-color: #ced4da;">
                 <div id="passwordError" class="text-danger"></div>
             </div>
             <div class="form-group">
                 <label for="exampleInputRole">Role</label>
-                <select class="form-control" id="exampleInputRole" name="role">
+                <select class="form-control" id="exampleInputRole" name="role" style="border-color: #ced4da;">
                     <option value="">Select a role</option>
                     <option>Student</option>
                     <option>Landlord</option>
@@ -158,18 +158,4 @@ $(document).ready(function(){
             $("#exampleInputRole").removeClass('is-valid');
             $("#exampleInputRole").addClass('is-invalid');
             $("#roleError").text("Please select a role.");
-            isValid = false;
-        } else {
-            $("#exampleInputRole").removeClass('is-invalid');
-            $("#exampleInputRole").addClass('is-valid');
-        }
-
-        // Prevent form submission if any validation fails
-        if(!isValid){
-            e.preventDefault(); // Prevent form submission
-        }
-    });
-});
-</script>
-</body>
-</html>
+            isValid = false

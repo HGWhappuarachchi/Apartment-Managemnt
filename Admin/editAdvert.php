@@ -16,6 +16,39 @@
     <title>Advertisements</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #f8f9fa; /* Set background color */
+            color: #343a40; /* Set text color */
+        }
+
+        .container {
+            margin-top: 50px; /* Add margin to the top of container */
+        }
+
+        h1 {
+            color: #007bff; /* Set heading color */
+            margin-bottom: 30px; /* Add margin to the bottom of heading */
+        }
+
+        th {
+            background-color: #007bff; /* Set table header background color */
+            color: #ffffff; /* Set table header text color */
+        }
+
+        .modal-title {
+            color: #007bff; /* Set modal title color */
+        }
+
+        .modal-body {
+            padding: 20px; /* Add padding to modal body */
+        }
+
+        .modal-footer {
+            justify-content: space-between; /* Adjust modal footer alignment */
+        }
+    </style>
 </head>
 <body>
 <?php include 'Navigation/Navigation.php'; ?>

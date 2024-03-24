@@ -21,13 +21,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap Page</title>
+    <title>Professional Looking Page</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .list-group-item {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        #map {
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <!-- import the naviation bar here -->
+    <!-- import the navigation bar here -->
     <?php include 'Navigation/Navigation.php'; ?>
 
     <div class="container">
@@ -36,8 +53,13 @@
                 <h3>Places</h3>
                 <ul id="places" class="list-group">
                     <?php foreach ($places as $place): ?>
-                        
-                        <li class="list-group-item" data-lat="<?= $place['latitude'] ?>" data-lng="<?= $place['longitude'] ?>" data-title="<?= $place['title'] ?>" data-description="<?= $place['description'] ?>" data-price="<?= $place['price'] ?>" data-image="<?= $place['image_path'] ?>">
+                        <li class="list-group-item"
+                            data-lat="<?= $place['latitude'] ?>"
+                            data-lng="<?= $place['longitude'] ?>"
+                            data-title="<?= $place['title'] ?>"
+                            data-description="<?= $place['description'] ?>"
+                            data-price="<?= $place['price'] ?>"
+                            data-image="<?= $place['image_path'] ?>">
                             <?= $place['title'] ?>
                         </li>
                     <?php endforeach; ?>
@@ -45,7 +67,7 @@
             </div>
             <div class="col-md-8">
                 <h2>Map</h2>
-                <div id="map" style="height: 400px;"></div>
+                <div id="map"></div>
             </div>
         </div>
     </div>
@@ -53,7 +75,8 @@
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTFGArXcSNpCDGgz7LJzyRsl9YSfeMHGs&callback=initMap"></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 
     <script>
         var map;
@@ -71,7 +94,7 @@
                 var title = $(this).data('title');
                 var description = $(this).data('description');
                 var price = $(this).data('price');
-                var imagePath = $(this).data('image'); // Fetch the image path
+                var imagePath = $(this).data('image');
 
                 var marker = new google.maps.Marker({
                     position: { lat: lat, lng: lng },
@@ -96,7 +119,5 @@
             });
         }
     </script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTFGArXcSNpCDGgz7LJzyRsl9YSfeMHGs&callback=initMap"></script>
-
 </body>
 </html>

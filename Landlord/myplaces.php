@@ -33,19 +33,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h3>Places</h3>
+                <h3 style="margin-bottom: 20px;">Places</h3>
                 <ul id="places" class="list-group">
                     <?php foreach ($places as $place): ?>
                         
-                        <li class="list-group-item" data-lat="<?= $place['latitude'] ?>" data-lng="<?= $place['longitude'] ?>" data-title="<?= $place['title'] ?>" data-description="<?= $place['description'] ?>" data-price="<?= $place['price'] ?>" data-image="<?= $place['image_path'] ?>">
+                        <li class="list-group-item" data-lat="<?= $place['latitude'] ?>" data-lng="<?= $place['longitude'] ?>" data-title="<?= $place['title'] ?>" data-description="<?= $place['description'] ?>" data-price="<?= $place['price'] ?>" data-image="<?= $place['image_path'] ?>" style="cursor: pointer;">
                             <?= $place['title'] ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
             <div class="col-md-8">
-                <h2>Map</h2>
-                <div id="map" style="height: 400px;"></div>
+                <h2 style="margin-bottom: 20px;">Map</h2>
+                <div id="map" style="height: 400px; border: 1px solid #ccc;"></div>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTFGArXcSNpCDGgz7LJzyRsl9YSfeMHGs&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 
     <script>
         var map;
@@ -96,7 +96,5 @@
             });
         }
     </script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTFGArXcSNpCDGgz7LJzyRsl9YSfeMHGs&callback=initMap"></script>
-
 </body>
 </html>

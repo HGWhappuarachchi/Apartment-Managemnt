@@ -26,6 +26,95 @@
     <title>Cancel Requests</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+    /* Navbar styling */
+    .navbar {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 18px;
+        color: #333;
+        margin-right: 15px;
+    }
+
+    /* Requests list styling */
+    #requests {
+        padding: 0;
+    }
+
+    #requests li {
+        list-style: none;
+        margin-bottom: 15px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        display: flex; /* Align items horizontally */
+        align-items: center; /* Center vertically */
+    }
+
+    #requests li:hover {
+        background-color: #f0f0f0;
+    }
+
+    #requests li h5 {
+        margin-bottom: 10px;
+    }
+
+    #requests li p {
+        margin-bottom: 5px;
+    }
+
+    #requests li img {
+        width: 20%;
+        margin-left: auto; /* Align to the right */
+    }
+
+    /* Cancel button styling */
+    .cancel-btn {
+        margin-left: auto;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 16px;
+        background-color: #dc3545;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .cancel-btn:hover {
+        background-color: #c82333;
+    }
+
+    /* Alert box styling */
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+    .alert-danger {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+    }
+</style>
+
 </head>
 <body>
     <!-- Navigation Bar -->

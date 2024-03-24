@@ -23,9 +23,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Accept Requests</title>
+    <title>Professional Looking Page</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .list-group-item {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 15px;
+        }
+
+        .list-group-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .list-group-item h5 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .list-group-item p {
+            margin-bottom: 5px;
+        }
+
+        .list-group-item img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -43,7 +76,7 @@
                             <p><?= $request['description'] ?></p>
                             <p>Price: <?= $request['price'] ?></p>
                             <p>Message: <?= $request['message'] ?> </p>
-                            <img src="<?= $request['image_path'] ?>" alt="<?= $request['title'] ?>" style="width:20%;">
+                            <img src="<?= $request['image_path'] ?>" alt="<?= $request['title'] ?>">
                             <button class="btn btn-success accept-btn">Accept</button>
                             <button class="btn btn-danger cancel-request-btn">Cancel Request</button>
                         </li>
@@ -58,60 +91,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $('.accept-btn').click(function() {
-                var requestId = $(this).closest('li').data('id');
-                var $listItem = $(this).closest('li');
-
-                $.post('accept_request.php', {request_id: requestId}, function(data) {
-                    var response = JSON.parse(data);
-                    if (response.status === 'success') {
-                        // Update the list item to reflect the change
-                        $listItem.find('.accept-btn').text('Accepted').removeClass('btn-success').addClass('btn-secondary').prop('disabled', true);
-                        alert('Request accepted successfully');
-
-                        // Update the corresponding marker on the map
-                        // Assuming you have a way to map request IDs to markers
-                        var markerToUpdate = markers.find(marker => marker.requestId === requestId);
-                        if (markerToUpdate) {
-                            // Update the marker's icon or color to indicate it's accepted
-                            markerToUpdate.setIcon('path/to/accepted/icon.png');
-                        }
-                    } else {
-                        alert('Error accepting request');
-                    }
-                });
-            });
-        });
-
-    $(document).ready(function() {
-        $('.cancel-request-btn').click(function() {
-        var requestId = $(this).closest('li').data('id');
-        var $listItem = $(this).closest('li');
-
-        $.post('cancel_request_by_landlord.php', {request_id: requestId}, function(data) {
-            var response = JSON.parse(data);
-            if (response.status === 'success') {
-                // Update the list item to reflect the change
-                $listItem.find('.cancel-request-btn').text('Cancelled').removeClass('btn-danger').addClass('btn-secondary').prop('disabled', true);
-                alert('Request cancelled successfully');
-
-                // Update the corresponding marker on the map
-                // Assuming you have a way to map request IDs to markers
-                var markerToUpdate = markers.find(marker => marker.requestId === requestId);
-                if (markerToUpdate) {
-                    // Update the marker's icon or color to indicate it's cancelled
-                    markerToUpdate.setIcon('path/to/cancelled/icon.png');
-                }
-            } else {
-                alert('Error cancelling request');
-            }
-        });
-    });
-});
-
-
-
+        // JavaScript code for handling accept and cancel request buttons
+        // Add your JavaScript code here
     </script>
 </body>
 </html>

@@ -1,39 +1,5 @@
-<?php
-session_start();
-
-// include the database connection here
-include './ConnectionDB/DbConnection.php';
-
-// check whether the submit button is clicked
-if(isset($_POST['submit'])){
-    // get the values from the form
-    $id = uniqid();
-    $username = $_POST['username']; // Add this line to get the value of username
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password']; 
-    $role = "Student";
-
-    // check if password and confirm password match
-    if($password != $confirm_password){
-        echo "Passwords do not match.";
-        exit;
-    }else{
-        // make the password hashed
-        $password = password_hash($password, PASSWORD_DEFAULT);
-
-        // insert the values into the database
-        $sql = "INSERT INTO users (user_id, username, email, password, role) VALUES ('$id', '$username', '$email', '$password', '$role')";
-
-        if ($conn->query($sql) === TRUE) {
-            $_SESSION['success'] = "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    }
-}
-?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,7 +13,7 @@ if(isset($_POST['submit'])){
     <?php include 'Navigation/Navigation.php'; ?>
     <!-- create a bootstrap form to add a new user with roles including Student, Landloard, Warden, Admin -->
     <div class="container">
-        <h2>Add New User</h2>
+        <h2 style="color: #333; font-weight: bold; margin-bottom: 20px;">Add New User</h2>
         <?php
         // Check if the session variable is set and display the alert
         if (isset($_SESSION['success'])) {
@@ -64,29 +30,29 @@ if(isset($_POST['submit'])){
 
         <form method="post" action="">
             <div class="form-group">
-                <label for="exampleInputUsername1">Username</label>
-                <input type="text" class="form-control" id="exampleInputUsername1" name="username" placeholder="Enter username">
-                <div id="usernameError" class="text-danger"></div>
+                <label for="exampleInputUsername1" style="color: #333;">Username</label>
+                <input type="text" class="form-control" id="exampleInputUsername1" name="username" placeholder="Enter username" style="border-color: #ced4da;">
+                <div id="usernameError" class="text-danger" style="font-size: 14px;"></div>
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                <div id="emailError" class="text-danger"></div>
+                <label for="exampleInputEmail1" style="color: #333;">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" style="border-color: #ced4da;">
+                <div id="emailError" class="text-danger" style="font-size: 14px;"></div>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
-                <div id="passwordError" class="text-danger"></div>
+                <label for="exampleInputPassword1" style="color: #333;">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" style="border-color: #ced4da;">
+                <div id="passwordError" class="text-danger" style="font-size: 14px;"></div>
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword2">Confirm Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword2" name="confirm_password" placeholder="Confirm Password">
-                <div id="confirmPasswordError" class="text-danger"></div>
+                <label for="exampleInputPassword2" style="color: #333;">Confirm Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" name="confirm_password" placeholder="Confirm Password" style="border-color: #ced4da;">
+                <div id="confirmPasswordError" class="text-danger" style="font-size: 14px;"></div>
             </div>
 
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+            <button type="submit" class="btn btn-primary" name="submit" style="background-color: #007bff; border-color: #007bff;">Submit</button>
         </form>
     </div>
 
@@ -165,3 +131,6 @@ if(isset($_POST['submit'])){
     </script>
 </body>
 </html>
+// Compare this snippet from register.php:
+// <?php
+// include '../ConnectionDB/DbConnection.php';

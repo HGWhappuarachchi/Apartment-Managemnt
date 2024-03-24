@@ -28,4 +28,3 @@ if (isset($_POST['place_id']) && isset($_POST['student_id']) && isset($_POST['me
         echo json_encode(['status' => 'error']);
     }
 }
-?>

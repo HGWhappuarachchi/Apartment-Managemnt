@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,43 @@
     <title>Bootstrap Page</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Set background color */
+        }
+
+        .container {
+            margin-top: 50px; /* Add margin to the top of container */
+        }
+
+        h1 {
+            color: #007bff; /* Set text color */
+            margin-bottom: 30px; /* Add margin to the bottom of heading */
+        }
+
+        label {
+            color: #333; /* Set label text color */
+            font-weight: bold; /* Make label text bold */
+        }
+
+        .form-control {
+            border-color: #ced4da; /* Set border color for form controls */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Set background color for primary button */
+            border-color: #007bff; /* Set border color for primary button */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Set background color for primary button on hover */
+            border-color: #0056b3; /* Set border color for primary button on hover */
+        }
+
+        .alert {
+            margin-top: 20px; /* Add margin to the top of alert */
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -13,10 +50,6 @@
     <?php include 'Navigation/Navigation.php'; ?>
 
     <div class="container">
-
-
-
-
         <h1>Create Advertisement</h1>
 
         <?php
@@ -57,15 +90,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-
-
-
-
-
-
-
-
-
 
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

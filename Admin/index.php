@@ -14,6 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Bootstrap Page</title>
     <!-- Bootstrap CSS -->
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #f8f9fa; /* Set background color */
+            color: #343a40; /* Set text color */
+        }
+
+        .container {
+            margin-top: 50px; /* Add margin to the top of container */
+        }
+    </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
